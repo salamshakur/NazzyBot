@@ -12,6 +12,7 @@ module.exports = {
 			var member = message.guild.roles.get(myRole.id).members;
 			//var find = message.guild.roles.find('name', 'Admin #2');
 			console.log(member);
+			
 		}
 	},
 };
