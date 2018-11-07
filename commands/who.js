@@ -1,18 +1,25 @@
+const Discord = require('discord.js');
+const bot = new Discord.Client();
+
+
 module.exports = {
 	name: 'who',
-	description: 'Ask me who and I\'ll tell the channel\'s admins, certain roles, ect!',
+	description: 'Ask me who and I\'ll tell the channel\'s admins, roles, ect!',
 	async execute(message, args) {
 
-    if(!args.length) {
-      return message.channel.send('You need to supply a type term!');
-    }
+			// Get the server ID that the message was sent on
+			//var id = message.guild.id;
 
-    if(args[0] === 'admin') {
-			var myRole = message.guild.roles.find(role => role.name === 'Admin #2');
-			var member = message.guild.roles.get(myRole.id).members;
-			//var find = message.guild.roles.find('name', 'Admin #2');
-			console.log(member);
-			
-		}
-	},
-};
+			var members = message.guild.members;
+			//console.log(members);
+
+			members.forEach((member) => {
+				var id = member.id;
+
+				
+
+
+			})
+
+		},
+	};
