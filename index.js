@@ -15,6 +15,19 @@ for(const file of commandFiles) {
 bot.on('ready', () => {
 	console.log(`${bot.user.username} is online!`);
 	bot.user.setActivity('on Atom.io!');
+
+	console.log('\nServers:');
+	console.log('***********\n');
+
+
+	bot.guilds.forEach((guild) => {
+		console.log(`\n${guild.name}\n`);
+
+		guild.channels.forEach((channel) => {
+			console.log(`\tChannel: ${channel.name} - ${channel.type}`);
+		})
+
+	})
 });
 
 bot.on('message', async message => {
