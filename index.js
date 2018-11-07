@@ -27,6 +27,14 @@ bot.on('ready', () => {
 			console.log(`\tChannel: ${channel.name} - ${channel.type}`);
 		})
 
+		console.log('\n\t Member:');
+		console.log('\t**********\n');
+
+		guild.members.forEach((member) => {
+			console.log(`\t\t${member.user.username} - ${member.id}`);
+		})
+
+
 	})
 });
 
