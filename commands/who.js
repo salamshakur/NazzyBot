@@ -16,7 +16,14 @@ module.exports = {
 			members.forEach((member) => {
 				var id = member.id;
 
+				var perms = member.permissions;
+				var name = member.user.username;
 
+				if(perms.has("KICK_MEMBERS")){
+					console.log(name + " can kick members!");
+				}else{
+					console.log(name + "cannot kick!");
+				}
 
 
 			})
