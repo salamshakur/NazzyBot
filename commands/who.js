@@ -8,11 +8,10 @@ module.exports = {
     }
 
     if(args[0] === 'admin') {
-			var chan = message.channel.id;
-      var mem = chan.members;
-
-      console.log(mem.id);
-
+			var myRole = message.guild.roles.find(role => role.name === 'Admin #2');
+			var member = message.guild.roles.get(myRole.id).members;
+			//var find = message.guild.roles.find('name', 'Admin #2');
+			console.log(member);
 		}
 	},
 };
