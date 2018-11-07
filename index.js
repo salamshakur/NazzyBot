@@ -23,7 +23,6 @@ bot.on('ready', () => {
 	console.log(`${bot.user.username} is online!`);
 	bot.user.setActivity('on Atom.io!');
 
-
 	console.log('\nServers:');
 	console.log('***********\n');
 
@@ -43,7 +42,6 @@ bot.on('ready', () => {
 		guild.members.forEach((member) => {
 			console.log(`\t\t${member.user.username} - ${member.id}`);
 		})
-
 
 	})
 });
