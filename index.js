@@ -23,7 +23,7 @@ bot.on('ready', () => {
 	console.log(`${bot.user.username} is online!`);
 	bot.user.setActivity('on Atom.io!');
 
-	console.log('\nServers:');
+	/*console.log('\nServers:');
 	console.log('***********\n');
 
 	// Shows me every server my bot is in
@@ -43,7 +43,8 @@ bot.on('ready', () => {
 			console.log(`\t\t${member.user.username} - ${member.id}`);
 		})
 
-	})
+	}) */
+	
 });
 
 // When a message is sent...
