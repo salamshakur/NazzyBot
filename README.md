@@ -6,11 +6,13 @@ This is an open-source project, so any help from the community would be most app
 
 Below are all of Nazzy's current commands:
 
-* !hello     - Say hello and Nazzy will say hello back, try it!
+* !hello          - Say hello and Nazzy will say hello back, try it!
 
-* !send cats - Nazzy will send a random picture or GIF of a cat!
+* !send cats      - Nazzy will send a random picture or GIF of a cat!
 
-* !urb       - Give it a word and Nazzy will search Urban Dictionary for it!
+* !urb            - Give it a word and Nazzy will search Urban Dictionary for it!
+
+* !role <@member> - Tag a member using role to see what permissions they have!
 
 ******************************************************************************
 
