@@ -13,44 +13,42 @@ module.exports = {
 
 			// Get member that was tagged
 			const member = message.mentions.members.first();
-			//var username = member.user.username;
 
-			//console.log("test...");
-
-			// Get that members permissions
-			const invite = (member.hasPermission("CREATE_INSTANT_INVITE"))? "Can create invites" : "Cannot create invite";
-			const kick = (member.hasPermission("KICK_MEMBERS"))? "Can kick members" : "Cannot kick members";
-			const ban = (member.hasPermission("BAN_MEMBERS"))? "Can ban users" : "Cannot ban users";
-			const admin = (member.hasPermission("ADMINISTRATOR"))? "Is admin" : "Is not admin";
-			const manageChannel = (member.hasPermission("MANAGE_CHANNELS"))? "Can manage channels" : "Cannot manage channels";
- 			const manageServer = (member.hasPermission("MANAGE_GUILD"))? "Can manage servers" : "Cannot manage servers";
-			const addreaction = (member.hasPermission("ADD_REACTIONS"))? "Can add reactions" : "Cannot add reactions";
-			const readmessages = (member.hasPermission("READ_MESSAGES"))? "Can read messages" : "Cannot read messages";
-			const sendmessages = (member.hasPermission("SEND_MESSAGES"))? "Can send messages" : "Cannot send messages";
-			const sendTTSmessages = (member.hasPermission("SEND_TTS_MESSAGES"))? "Can send TTS messages" : "Cannot send TTS messages";
-			const manageMessages = (member.hasPermission("MANAGE_MESSAGES"))? "Can manage messages" : "Cannot manage messages";
-			const embedLinks = (member.hasPermission("EMBED_LINKS"))? "Can embed links" : "Cannot embed links";
-			const attachFiles = (member.hasPermission("ATTACH_FILES"))? "Can attach files" : "Cannot attach files";
-			const readMessageHistory = (member.hasPermission("READ_MESSAGE_HISTORY"))? "Can read message history" : "Cannot read message history";
-			const mentionEveryone = (member.hasPermission("MENTION_EVERYONE"))? "Can mention everyone" : "Cannot mention everyone";
-			const externalEmojis = (member.hasPermission("EXTERNAL_EMOJIS"))? "Can manage external emojis" : "Cannot manage external emojis";
-			const connect = (member.hasPermission("CONNECT"))? "Can connect to a voice channel" : "Cannot connect to a voice channel";
-			const speak = (member.hasPermission("SPEAK"))? "Can speak in a voice channel" : "Cannot speak in a voice channel";
-			const muteMembers = (member.hasPermission("MUTE_MEMBERS"))? "Can mute members" : "Cannot mute members";
-			const deafenMembers = (member.hasPermission("DEAFEN_MEMBERS"))? "Can deafen members" : "Cannot deafen members";
-			const moveMembers = (member.hasPermission("MOVE_MEMBERS"))? "Can move members" : "Cannot move members";
-			const useVAD = (member.hasPermission("USE_VAD"))? "Can use voice-activity-detection" : "Cannot use voice-activity-detection";
-			const changeNickname = (member.hasPermission("CHANGE_NICKNAME"))? "Can change nickname" : "Cannot change nickname";
-			const manageNickname = (member.hasPermission("MANAGE_NICKNAMES"))? "Can manage nickname" : "Cannot manage nickname";
-			const manageRolesOrPermissions = (member.hasPermission("MANAGE_ROLES_OR_PERMISSIONS"))? "Can manage permissions & roles" : "Cannot manage permissions & roles";
-			const manageWebhooks = (member.hasPermission("MANAGE_WEBHOOKS"))? "Can manage webhooks" : "Cannot manage webhooks";
-			const emojis = (member.hasPermission("MANAGE_EMOJIS"))? "Can manage emojis" : "Cannot manage emojis";
-
-			// TODO: create an embed message to show what this user can and cannot do!
+			// Create an embed message
 			const embed = new Discord.RichEmbed()
-				.setTitle("User - ") // add user here
-				.setAuthor("Nazzy")
-				.setColor("#2966c6")
-				
+				.setTitle("User - " + member) // add user here
+				.setColor("#0x00AE86")
+
+				// TODO: FIX ERROR, MAX 25 FIELDS, HAVE 27!
+				.addField("Can create invites?", member.hasPermission("CREATE_INSTANT_INVITE").toString())
+				.addField("Can kick members?", member.hasPermission("KICK_MEMBERS").toString())
+				.addField("Can ban members?", member.hasPermission("BAN_MEMBERS").toString())
+				.addField("Is admin?", member.hasPermission("ADMINISTRATOR").toString())
+				.addField("Can manage channels?", member.hasPermission("MANAGE_CHANNELS").toString())
+				.addField("Can manage servers?", member.hasPermission("MANAGE_GUILD").toString())
+				.addField("Can add reactions?", member.hasPermission("ADD_REACTIONS").toString())
+				.addField("Can read messages?", member.hasPermission("READ_MESSAGES").toString())
+				.addField("Can send messages?", member.hasPermission("SEND_MESSAGES").toString())
+				.addField("Can send Text-to-speech messages?", member.hasPermission("SEND_TTS_MESSAGES").toString())
+				.addField("Can manage messages?", member.hasPermission("MANAGE_MESSAGES").toString())
+				.addField("Can embed links?", member.hasPermission("EMBED_LINKS").toString())
+				.addField("Can attach files?", member.hasPermission("ATTACH_FILES").toString())
+				.addField("Can read message history?", member.hasPermission("READ_MESSAGE_HISTORY").toString())
+				.addField("Can mention everyone?", member.hasPermission("MENTION_EVERYONE").toString())
+				.addField("Can manage external emojis?", member.hasPermission("EXTERNAL_EMOJIS").toString())
+				.addField("Can connect to a voice channel?", member.hasPermission("CONNECT").toString())
+				.addField("Can speak in a voice channel?", member.hasPermission("SPEAK").toString())
+				.addField("Can mute members?", member.hasPermission("MUTE_MEMBERS").toString())
+				.addField("Can deafen members?", member.hasPermission("DEAFEN_MEMBERS").toString())
+				.addField("Can move members?", member.hasPermission("MOVE_MEMBERS").toString())
+				.addField("Can use voice-activity-detection?", member.hasPermission("USE_VAD").toString())
+				.addField("Can change nickname?", member.hasPermission("CHANGE_NICKNAME").toString())
+				.addField("Can manage nickname?", member.hasPermission("MANAGE_NICKNAME").toString())
+				.addField("Can manage permissions & roles?", member.hasPermission("MANAGE_ROLES_OR_PERMISSIONS").toString())
+				.addField("Can manage webhooks?", member.hasPermission("MANAGE_WEBHOOKS").toString())
+				.addField("Can manage emojis?", member.hasPermission("MANAGE_EMOJIS").toString());
+
+			// Send the embed message
+	 		message.channel.send(embed);
 		},
 	};
