@@ -43,9 +43,9 @@ module.exports = {
 				.addField("Can move members?", member.hasPermission("MOVE_MEMBERS").toString())
 				.addField("Can use voice-activity-detection?", member.hasPermission("USE_VAD").toString())
 				.addField("Can change nickname?", member.hasPermission("CHANGE_NICKNAME").toString())
-				.addField("Can manage nickname?", member.hasPermission("MANAGE_NICKNAME").toString())
-				.addField("Can manage permissions & roles?", member.hasPermission("MANAGE_ROLES_OR_PERMISSIONS").toString())
-				.addField("Can manage webhooks?", member.hasPermission("MANAGE_WEBHOOKS").toString())
+				//.addField("Can manage nickname?", member.hasPermission("MANAGE_NICKNAME").toString())
+				//.addField("Can manage permissions & roles?", member.hasPermission("MANAGE_ROLES_OR_PERMISSIONS").toString())
+				//.addField("Can manage webhooks?", member.hasPermission("MANAGE_WEBHOOKS").toString())
 				.addField("Can manage emojis?", member.hasPermission("MANAGE_EMOJIS").toString());
 
 			// Send the embed message
