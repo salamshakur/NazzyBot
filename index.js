@@ -44,7 +44,7 @@ bot.on('ready', () => {
 		})
 
 	}) */
-	
+
 });
 
 // When a message is sent...
