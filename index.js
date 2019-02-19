@@ -21,7 +21,7 @@ bot.on('ready', () => {
 
 	// Let me know if bot is connected and shows it's activity
 	console.log(`${bot.user.username} is online!`);
-	bot.user.setActivity('on Atom.io!');
+	bot.user.setActivity('with Visual Studio Code!');
 
 	/*console.log('\nServers:');
 	console.log('***********\n');
