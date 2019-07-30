@@ -10,6 +10,8 @@ Below are all of Nazzy's current commands:
 
 * !send cats      - Nazzy will send a random picture or GIF of a cat!
 
+* !send dogs      - Nazzy will send a random picture or GIF of a dog!
+
 * !urb            - Give it a word and Nazzy will search Urban Dictionary for it!
 
 * !role <@member> - Tag a member using role to see what permissions they have!
