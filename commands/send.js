@@ -14,5 +14,10 @@ module.exports = {
 			message.channel.send(body.file);
 		}
 
+		if(args[0] === 'dogs'){
+			const { body } = await snekfetch.get('https://dog.ceo/api/breeds/image/random');
+			message.channel.send(body.message);
+		}
+
 	},
 };
