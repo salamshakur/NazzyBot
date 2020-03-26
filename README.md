@@ -12,6 +12,8 @@ Below are all of Nazzy's current commands:
 
 * !send dogs      - Nazzy will send a random picture or GIF of a dog!
 
+* !send <search>  - If cats and dogs isn't your thing, that's ok! Nazzy can send you anything you ask for, try it out!
+
 * !urb            - Give it a word and Nazzy will search Urban Dictionary for it!
 
 * !role <@member> - Tag a member using role to see what permissions they have!
@@ -24,4 +26,4 @@ Below are some explanations regarding other files:
 
 * Commands - This folder holds all of Nazzy's commands, each are a JavaScript file
 
-* Any other file are the default files needed to run Node.JS
+* NOTE: To get Nazzy to work, you will need a config.json file that holds the prefix and token of your bot.
