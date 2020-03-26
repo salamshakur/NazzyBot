@@ -52,8 +52,13 @@ module.exports = {
 				if (!urls.length) {
 					return;
 				}
+
+				var max = urls.length;
+				var min = 0;
+
+				var random = Math.floor(Math.random() * (max - min)) + min;
 		 
-				message.channel.send( urls[0] );
+				message.channel.send( urls[random] );
 
 			});
 		}
