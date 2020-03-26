@@ -12,11 +12,11 @@ Below are all of Nazzy's current commands:
 
 * !send dogs      - Nazzy will send a random picture or GIF of a dog!
 
-* !send <search>  - If cats and dogs isn't your thing, that's ok! Nazzy can send you anything you ask for, try it out!
+* !send (search)  - If cats and dogs isn't your thing, that's ok! Nazzy can send you anything you ask for, try it out!
 
 * !urb            - Give it a word and Nazzy will search Urban Dictionary for it!
 
-* !role <@member> - Tag a member using role to see what permissions they have!
+* !role (@member) - Tag a member using role to see what permissions they have!
 
 ******************************************************************************
 
