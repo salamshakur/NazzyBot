@@ -26,4 +26,4 @@ Below are some explanations regarding other files:
 
 * Commands - This folder holds all of Nazzy's commands, each are a JavaScript file
 
-* NOTE: To get Nazzy to work, you will need a config.json file that holds the prefix and token of your bot.
+* NOTE: To get Nazzy to work, you will need a config.json file that holds the prefix, token of your bot, day set to null, count set to null, and a limit that determines total amount of !send (search) commands per day

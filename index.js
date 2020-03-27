@@ -21,7 +21,7 @@ bot.on('ready', () => {
 
 	// Let me know if bot is connected and shows it's activity
 	console.log(`${bot.user.username} is online!`);
-	bot.user.setActivity('with Visual Studio Code!');
+	bot.user.setActivity('with COVID-19!');
 
 	/*console.log('\nServers:');
 	console.log('***********\n');
@@ -52,30 +52,33 @@ bot.on('message', async message => {
 
 	// If the messsage doesn't contain a prefix, is from another bot, or is a DM message, ignore
 	if (!message.content.startsWith(config.prefix)) return;
-  if (message.author.bot) return;
-  if (message.channel.type === 'dm') return;
+	if (message.author.bot) return;
+	if (message.channel.type === 'dm') return;
 
 	// Parse the message and converts the first argument into lowercase
 	const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
 
 	// If command doesn't exist in my collection, ignore
-	if (!bot.commands.has(command)){
-    return;
-  }
-  else{
-    try{
-
+	if (!bot.commands.has(command)) 
+	{
+		message.channel.send('That command does not exist, sorry bud.');
+    	return;
+	}
+	else 
+	{
+		try 
+		{
 			// Otherwise, run the execute function inside command module
-      bot.commands.get(command).execute(message, args);
-    }
-    catch(error) {
-
+			bot.commands.get(command).execute(message, args);
+		}
+		catch(error) 
+		{
 			// Catch exceptions thrown
-			message.reply('there was an error trying to execute that command!');
-      console.error(error);
-    }
-  }
+			message.channel.send('There was an error trying to execute that command!');
+			console.error(error);
+		}
+	}
 });
 
 // Login bot using special token
