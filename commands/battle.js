@@ -1,4 +1,6 @@
 const fs = require('fs');
+const Discord = require('discord.js');
+
 const readline = require('readline');
 const {google} = require('googleapis');
 
@@ -8,15 +10,16 @@ const TOKEN_PATH = 'token.json';
 module.exports = {
 	name: 'battle',
 	description: 'Challenge your opponent!',
-	execute(message, args) {
+	execute(message, args, bot) {
 
         if(!args.length){
             return message.channel.send('Tag a person please!');
         }
 
-        const member = message.mentions.users.first().username;
+        const player = message.author.username
+        const opponent = message.mentions.users.first().username;
 
-        if(member == null){
+        if(opponent == null){
             return message.channel.send('Not a valid person bro!');
         }
 
@@ -24,25 +27,37 @@ module.exports = {
             var max = 100;
             return Math.floor(Math.random() * Math.floor(max));
         }
-
+        
         var playerRoll = getRandomInt();
-        message.channel.send('You roll a ' + playerRoll + '!');
+        var opponentRoll = getRandomInt();
+        var result = null;
+        var thumbnail = null;
 
-        var OpponentRoll = getRandomInt();
-        message.channel.send(member + ' rolls a ' + OpponentRoll + '!');
-
-        if (playerRoll > OpponentRoll)
+        if(playerRoll > opponentRoll)
         {
-            return message.channel.send('You win! Congratulations ' + message.author.username + '.');
+            result = player;
+            thumbnail = message.author.avatarURL;
         }
-        else if (playerRoll < OpponentRoll)
+        else if (playerRoll < opponentRoll)
         {
-            return message.channel.send('You Lose! ' + member + ' whooped yo ass. Sorry, better luck next time.');
+            result = opponent;
+            thumbnail = message.mentions.members.first().user.avatarURL;
         }
         else
         {
-            return message.channel.send('It\'s a tie! What are the odds!');
+            result = 'It\'s a tie! What are the odds';
+            thumbnail = bot.user.avatarURL;
         }
+
+        const embed = new Discord.RichEmbed()
+            .setAuthor(player + ' VS ' + opponent)
+            .setColor("#FF0000")
+            .addField(player + ' rolls', playerRoll, true)
+            .addField(opponent + ' rolls', opponentRoll, true)
+            .addField('The winner is: ', result + '!', false)
+            .setThumbnail(thumbnail);
+
+        message.channel.send(embed);
                 
         // // Load client secrets from a local file.
         // fs.readFile('credentials.json', (err, content) => {

@@ -48,7 +48,7 @@ bot.on('message', async message => {
 		try 
 		{
 			// Otherwise, run the execute function inside command module
-			bot.commands.get(command).execute(message, args);
+			bot.commands.get(command).execute(message, args, bot);
 			// message.channel.send(bot.commands.get(command).description);
 		}
 		catch(error) 
