@@ -6,17 +6,21 @@ This is an open-source project, so any help from the community would be most app
 
 Below are all of Nazzy's current commands:
 
-* !hello          - Say hello and Nazzy will say hello back, try it!
+* !hello                - Say hello and Nazzy will say hello back, try it!
 
-* !send cats      - Nazzy will send a random picture or GIF of a cat!
+* !battle (@member)     - Challenge your opponent in a game of dice!
 
-* !send dogs      - Nazzy will send a random picture or GIF of a dog!
+* !send cats            - Nazzy will send a random picture or GIF of a cat!
 
-* !send (search)  - If cats and dogs isn't your thing, that's ok! Nazzy can send you anything you ask for, try it out!
+* !send dogs            - Nazzy will send a random picture or GIF of a dog!
 
-* !urb            - Give it a word and Nazzy will search Urban Dictionary for it!
+* !send (search)        - If cats and dogs isn't your thing, that's ok! Nazzy can send you anything you ask for, try it out!
 
-* !role (@member) - Tag a member using role to see what permissions they have!
+* !urb                  - Give it a word and Nazzy will search Urban Dictionary for it!
+
+* !role (@member)       - Tag a member using role to see what permissions they have!
+
+* !stats                - A command only the author can use! View all the servers I belong too, as well as, their information!
 
 ******************************************************************************
 
@@ -26,4 +30,4 @@ Below are some explanations regarding other files:
 
 * Commands - This folder holds all of Nazzy's commands, each are a JavaScript file
 
-* NOTE: To get Nazzy to work, you will need a config.json file that holds the prefix, token of your bot, day set to null, count set to null, and a limit that determines total amount of !send (search) commands per day
+* NOTE: To get Nazzy to work, you will need a config.json file that holds the prefix, token of your bot, and ownerID which is the author of the bot's Discord ID. In addition, you will also need a credentials.json and token.json acquired via Google SpreadSheet API.

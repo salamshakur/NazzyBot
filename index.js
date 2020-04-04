@@ -23,28 +23,6 @@ bot.on('ready', () => {
 	console.log(`${bot.user.username} is online!`);
 	bot.user.setActivity('with COVID-19!');
 
-	/*console.log('\nServers:');
-	console.log('***********\n');
-
-	// Shows me every server my bot is in
-	bot.guilds.forEach((guild) => {
-		console.log(`\n${guild.name}\n`);
-
-		// Shows me every channel on each server my bot is in
-		guild.channels.forEach((channel) => {
-			console.log(`\tChannel: ${channel.name} - ${channel.type}`);
-		})
-
-		console.log('\n\t Member:');
-		console.log('\t**********\n');
-
-		// Shows me every member on each server
-		guild.members.forEach((member) => {
-			console.log(`\t\t${member.user.username} - ${member.id}`);
-		})
-
-	}) */
-
 });
 
 // When a message is sent...
@@ -71,6 +49,7 @@ bot.on('message', async message => {
 		{
 			// Otherwise, run the execute function inside command module
 			bot.commands.get(command).execute(message, args);
+			// message.channel.send(bot.commands.get(command).description);
 		}
 		catch(error) 
 		{

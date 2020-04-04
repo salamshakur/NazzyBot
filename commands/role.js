@@ -14,6 +14,10 @@ module.exports = {
 			// Get member that was tagged
 			const member = message.mentions.members.first();
 
+			if(member == null){
+				return message.channel.send('Not a valid person bro!');
+			}
+
 			// Create an embed message
 			const embed = new Discord.RichEmbed()
 				.setAuthor(member.user.username + " permissions:")
