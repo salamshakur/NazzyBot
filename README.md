@@ -20,7 +20,7 @@ Below are all of Nazzy's current commands:
 
 * !role (@member)       - Tag a member using role to see what permissions they have!
 
-* !stats                - A command only the author can use! View all the servers I belong too, as well as, their information!
+* !stats                - A command only the author can use! View all the servers Nazzy belongs too!
 
 ******************************************************************************
 
