@@ -16,6 +16,10 @@ module.exports = {
             return message.channel.send('Tag a person please!');
         }
 
+        if(message.mentions.everyone == true){
+            return message.channel.send('Bruuuuh. Don\'t be that guy.');
+        }
+
         const player = message.author.username
         const opponent = message.mentions.users.first().username;
 
