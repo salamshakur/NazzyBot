@@ -28,8 +28,9 @@ module.exports = {
         }
 
         function getRandomInt() {
+            var min = 0;
             var max = 100;
-            return Math.floor(Math.random() * Math.floor(max));
+            return Math.floor(Math.random() * (max - min + 1)) + min;
         }
         
         var playerRoll = getRandomInt();
