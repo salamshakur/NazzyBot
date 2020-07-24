@@ -1,6 +1,5 @@
 // Imported libraries
 const Discord = require('discord.js');
-const config = require('./config.json');
 const fs = require('fs');
 
 // Create the bot (client)
