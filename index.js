@@ -29,12 +29,12 @@ bot.on('ready', () => {
 bot.on('message', async message => {
 
 	// If the messsage doesn't contain a prefix, is from another bot, or is a DM message, ignore
-	if (!message.content.startsWith(config.prefix)) return;
+	if (!message.content.startsWith('!')) return;
 	if (message.author.bot) return;
 	if (message.channel.type === 'dm') return;
 
 	// Parse the message and converts the first argument into lowercase
-	const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+	const args = message.content.slice('!'.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
 
 	// If command doesn't exist in my collection, ignore
@@ -61,4 +61,4 @@ bot.on('message', async message => {
 });
 
 // Login bot using special token
-bot.login(config.token);
+bot.login(process.env.BOT_TOKEN);
