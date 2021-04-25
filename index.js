@@ -1,6 +1,7 @@
 // Imported libraries
 const Discord = require('discord.js');
 const fs = require('fs');
+require('dotenv').config();
 
 // Create the bot (client)
 const bot = new Discord.Client();
