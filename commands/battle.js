@@ -6,6 +6,9 @@ module.exports = {
 	description: 'Challenge your opponent!',
 	execute(message, args, bot) {
 
+        var name = null;
+        var avatar = null;
+
         if(!args.length){
             return message.channel.send('Tag a person please!');
         }
@@ -14,10 +17,15 @@ module.exports = {
             return message.channel.send('Bruuuuh. Don\'t be that guy.');
         }
 
-        const player = message.author.username
-        const opponent = message.mentions.users.first().username;
+        var player = message.author;
+        var playerName = player.username;
+        var playerAvatar = player.avatarURL;
 
-        if(opponent == null){
+        var opponent = message.mentions.users.first();
+        var opponentName = opponent.username;
+        var opponentAvatar = opponent.avatarURL;
+
+        if(opponent == null || opponent == undefined){
             return message.channel.send('Not a valid person bro!');
         }
 
@@ -29,32 +37,30 @@ module.exports = {
         
         var playerRoll = getRandomInt();
         var opponentRoll = getRandomInt();
-        var result = null;
-        var thumbnail = null;
 
         if(playerRoll > opponentRoll)
         {
-            result = player;
-            thumbnail = message.author.avatarURL;
+            name = playerName;
+            avatar = playerAvatar;
         }
         else if (playerRoll < opponentRoll)
         {
-            result = opponent;
-            thumbnail = message.mentions.members.first().user.avatarURL;
+            name = opponentName;
+            avatar = opponentAvatar;
         }
         else
         {
-            result = 'It\'s a tie! What are the odds';
-            thumbnail = bot.user.avatarURL;
+            name = 'It\'s a tie! What are the odds';
+            avatar = bot.user.avatarURL;
         }
 
         const embed = new Discord.RichEmbed()
-            .setAuthor(player + ' VS ' + opponent)
+            .setAuthor(playerName + ' VS ' + opponentName)
             .setColor("#FF0000")
-            .addField(player + ' rolls', playerRoll, true)
-            .addField(opponent + ' rolls', opponentRoll, true)
-            .addField('The winner is: ', result + '!', false)
-            .setThumbnail(thumbnail);
+            .addField(playerName + ' rolls', playerRoll, true)
+            .addField(opponentName + ' rolls', opponentRoll, true)
+            .addField('The winner is: ', name + '!', false)
+            .setThumbnail(avatar);
 
         message.channel.send(embed);
                 
