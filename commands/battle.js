@@ -22,12 +22,14 @@ module.exports = {
         var playerAvatar = player.avatarURL;
 
         var opponent = message.mentions.users.first();
-        var opponentName = opponent.username;
-        var opponentAvatar = opponent.avatarURL;
-
+        
         if(opponent == null || opponent == undefined){
             return message.channel.send('Not a valid person bro!');
         }
+        
+        var opponentName = opponent.username;
+        var opponentAvatar = opponent.avatarURL;
+
 
         function getRandomInt() {
             var min = 0;
